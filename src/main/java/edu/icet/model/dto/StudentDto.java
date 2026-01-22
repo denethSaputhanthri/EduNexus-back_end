@@ -1,20 +1,11 @@
 package edu.icet.model.dto;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
 
 import java.time.LocalDate;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@ToString
-@Entity
-@Table()
+@Getter
+@Setter
 public class StudentDto {
     private Integer studentId;
     private String firstName;
