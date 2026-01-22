@@ -21,4 +21,8 @@ public class StudentController {
     public List<StudentDto> getAll(){
         return service.getAll();
     }
+    @PutMapping("/update/details")
+    public void updateAl(StudentDto student){
+        service.updateAll(student);
+    }
 }
