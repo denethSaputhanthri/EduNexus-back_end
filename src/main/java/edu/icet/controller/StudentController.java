@@ -25,4 +25,8 @@ public class StudentController {
     public void updateAl(StudentDto student){
         service.updateAll(student);
     }
+    @DeleteMapping("/delete/details/{studentId}")
+    public void deleteAll(@PathVariable Integer studentId){
+        service.deleteAll(studentId);
+    }
 }
