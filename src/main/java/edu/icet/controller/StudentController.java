@@ -29,4 +29,8 @@ public class StudentController {
     public void deleteAll(@PathVariable Integer studentId){
         service.deleteAll(studentId);
     }
+    @GetMapping("/searchById/{studentId}")
+    public StudentDto searchById(@PathVariable Integer studentId){
+        return service.searchById(studentId);
+    }
 }
