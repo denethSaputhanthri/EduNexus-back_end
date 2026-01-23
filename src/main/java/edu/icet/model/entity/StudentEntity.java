@@ -21,4 +21,5 @@ public class StudentEntity {
     private String address;
     private Integer guardian;
     private String gender;
+    private String phone;
 }
