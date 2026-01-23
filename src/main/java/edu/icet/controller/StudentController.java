@@ -2,6 +2,7 @@ package edu.icet.controller;
 
 import edu.icet.model.dto.StudentDto;
 import edu.icet.service.StudentService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,6 +11,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 @RequestMapping("/student")
+@Tag(name = "Student-Contoller " ,description = "student API collection...")
 public class StudentController {
     final StudentService service;
 
