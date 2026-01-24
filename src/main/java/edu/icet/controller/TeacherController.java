@@ -27,4 +27,8 @@ public class TeacherController {
     public void updateTeacherDetails(TeacherDto teacher){
         service.updateDetails(teacher);
     }
+    @DeleteMapping("/delete/details/{teacherId}")
+    public void deleteDetails(@PathVariable Integer teacherId){
+        service.deleteDetails(teacherId);
+    }
 }

@@ -28,7 +28,7 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public void deleteDetails(Integer teacherId) {
-
+        repository.deleteById(teacherId);
     }
 
     @Override
