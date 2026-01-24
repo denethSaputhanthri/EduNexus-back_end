@@ -23,4 +23,8 @@ public class TeacherController {
     public List<TeacherDto> getAllDetails(){
         return service.getAllDetails();
     }
+    @PutMapping("/update/details")
+    public void updateTeacherDetails(TeacherDto teacher){
+        service.updateDetails(teacher);
+    }
 }

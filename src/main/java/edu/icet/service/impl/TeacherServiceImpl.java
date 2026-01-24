@@ -23,7 +23,7 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public void updateDetails(TeacherDto teacher) {
-
+        repository.save(mapper.map(teacher,TeacherEntity.class));
     }
 
     @Override
