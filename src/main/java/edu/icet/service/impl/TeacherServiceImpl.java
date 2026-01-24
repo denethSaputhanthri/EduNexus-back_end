@@ -44,6 +44,8 @@ public class TeacherServiceImpl implements TeacherService {
 
     @Override
     public TeacherDto searchById(Integer teacherId) {
-        return null;
+        TeacherEntity entity = repository.findById(teacherId).get();
+        TeacherDto teacherDto=mapper.map(entity, TeacherDto.class);
+        return teacherDto;
     }
 }

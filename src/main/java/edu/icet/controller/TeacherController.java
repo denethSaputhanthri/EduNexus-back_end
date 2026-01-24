@@ -13,22 +13,31 @@ import java.util.List;
 @RequestMapping("/teacher")
 @Tag(name = "Teacher-Controller",description = "Teacher API Collection")
 public class TeacherController {
+
     private final TeacherService service;
 
     @PostMapping("/add/details")
     public void addTeacherDetails(@RequestBody TeacherDto teacher){
         service.addDetails(teacher);
     }
+
     @GetMapping("/get/details")
     public List<TeacherDto> getAllDetails(){
         return service.getAllDetails();
     }
+
     @PutMapping("/update/details")
     public void updateTeacherDetails(TeacherDto teacher){
         service.updateDetails(teacher);
     }
+
     @DeleteMapping("/delete/details/{teacherId}")
     public void deleteDetails(@PathVariable Integer teacherId){
         service.deleteDetails(teacherId);
+    }
+
+    @GetMapping("/searchById/{teacherId}")
+    public TeacherDto searchById(@PathVariable Integer teacherId){
+        return service.searchById(teacherId);
     }
 }
