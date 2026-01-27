@@ -4,10 +4,9 @@ import edu.icet.model.dto.SubjectDto;
 import edu.icet.service.SubjectService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -19,5 +18,9 @@ public class SubjectController {
     @PostMapping("/add/details")
     public void addSubject(@RequestBody SubjectDto subject){
         service.addAll(subject);
+    }
+    @GetMapping("/get/details")
+    public List<SubjectDto> getAllSubject(){
+        return service.getAll();
     }
 }
