@@ -2,11 +2,17 @@ package edu.icet.service.impl;
 
 import edu.icet.model.dto.SubjectDto;
 import edu.icet.service.SubjectService;
+import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
+@RequiredArgsConstructor
 public class SubjectServiceImpl implements SubjectService {
+
+    final SubjectService service;
+    final ModelMapper mapper;
 
     @Override
     public void addAll(SubjectDto subject) {
