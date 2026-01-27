@@ -1,6 +1,7 @@
 package edu.icet.service.impl;
 
 import edu.icet.model.dto.SubjectDto;
+import edu.icet.repository.SubjectRepository;
 import edu.icet.service.SubjectService;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
@@ -11,7 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class SubjectServiceImpl implements SubjectService {
 
-    final SubjectService service;
+    final SubjectRepository repository;
     final ModelMapper mapper;
 
     @Override
