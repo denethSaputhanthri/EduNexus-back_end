@@ -1,5 +1,7 @@
 package edu.icet.service;
 
-public interface UserService {
+import edu.icet.model.dto.UserDTO;
 
+public interface UserService {
+    public void addUser(UserDTO user);
 }
