@@ -29,7 +29,7 @@ public class SubjectServiceImpl implements SubjectService {
 
     @Override
     public void deleteAll(Integer subjectId) {
-
+        repository.deleteById(subjectId);
     }
 
     @Override
