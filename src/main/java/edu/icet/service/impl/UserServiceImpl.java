@@ -19,4 +19,9 @@ public class UserServiceImpl implements UserService {
     public void addUser(UserDTO user) {
         repository.save(mapper.map(user, UserEntity.class));
     }
+
+    @Override
+    public void updateUser(UserDTO user) {
+        repository.save(mapper.map(user,UserEntity.class));
+    }
 }

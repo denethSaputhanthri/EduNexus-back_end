@@ -6,6 +6,7 @@ import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,5 +22,8 @@ public class UserController {
     public void addUser(@RequestBody UserDTO user){
         service.addUser(user);
     }
-
+    @PutMapping("/update/details")
+    public void updateUser(@RequestBody UserDTO user){
+        service.updateUser(user);
+    }
 }
