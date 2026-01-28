@@ -19,17 +19,24 @@ public class SubjectController {
     public void addSubject(@RequestBody SubjectDto subject){
         service.addAll(subject);
     }
+
     @GetMapping("/get/details")
     public List<SubjectDto> getAllSubject(){
         return service.getAll();
     }
+
     @PutMapping("/update/details")
     public void updateSubject(SubjectDto subject){
         service.updateAll(subject);
     }
+
     @DeleteMapping("/delete/details/{studentId}")
     public void deleteSubject(@PathVariable Integer studentId){
         service.deleteAll(studentId);
     }
 
+    @GetMapping("/searchById/{subjectId}")
+    public SubjectDto searchById(@PathVariable Integer subjectId){
+        return service.searchById(subjectId);
+    }
 }

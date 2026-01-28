@@ -45,6 +45,8 @@ public class SubjectServiceImpl implements SubjectService {
 
     @Override
     public SubjectDto searchById(Integer subjectId) {
-        return null;
+        SubjectEntity entity = repository.findById(subjectId).get();
+        SubjectDto subjectDto = mapper.map(entity, SubjectDto.class);
+        return subjectDto;
     }
 }
