@@ -23,4 +23,9 @@ public class SubjectController {
     public List<SubjectDto> getAllSubject(){
         return service.getAll();
     }
+    @PutMapping("/update/details")
+    public void updateSubject(SubjectDto subject){
+        service.updateAll(subject);
+    }
+
 }

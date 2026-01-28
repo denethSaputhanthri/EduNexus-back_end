@@ -23,6 +23,7 @@ public class SubjectServiceImpl implements SubjectService {
 
     @Override
     public void updateAll(SubjectDto subject) {
+        repository.save(mapper.map(subject,SubjectEntity.class));
 
     }
 
