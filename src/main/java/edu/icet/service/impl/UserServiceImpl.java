@@ -39,4 +39,9 @@ public class UserServiceImpl implements UserService {
         return userDTOArrayList;
     }
 
+    @Override
+    public void deleteUser(Integer userId) {
+        repository.deleteById(userId);
+    }
+
 }

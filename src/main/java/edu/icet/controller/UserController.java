@@ -28,4 +28,8 @@ public class UserController {
     public List<UserDTO> getAllDetails(){
         return service.getAll();
     }
+    @DeleteMapping("/delete/details/{userId}")
+    public void deleteUser(@PathVariable Integer userId){
+        service.deleteUser(userId);
+    }
 }
