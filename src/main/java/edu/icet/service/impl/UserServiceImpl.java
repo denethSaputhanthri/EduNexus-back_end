@@ -8,6 +8,9 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
@@ -24,4 +27,16 @@ public class UserServiceImpl implements UserService {
     public void updateUser(UserDTO user) {
         repository.save(mapper.map(user,UserEntity.class));
     }
+
+    @Override
+    public List<UserDTO> getAll() {
+        List<UserEntity> userEntities=repository.findAll();
+        ArrayList<UserDTO> userDTOArrayList=new ArrayList<>();
+        userEntities.forEach(userEntity -> {
+            UserDTO userDTO=mapper.map(userEntity, UserDTO.class);
+            userDTOArrayList.add(userDTO);
+        });
+        return userDTOArrayList;
+    }
+
 }
