@@ -20,16 +20,24 @@ public class UserController {
     public void addUser(@RequestBody UserDTO user){
         service.addUser(user);
     }
+
     @PutMapping("/update/details")
     public void updateUser(@RequestBody UserDTO user){
         service.updateUser(user);
     }
+
     @GetMapping("/get/details")
     public List<UserDTO> getAllDetails(){
         return service.getAll();
     }
+
     @DeleteMapping("/delete/details/{userId}")
     public void deleteUser(@PathVariable Integer userId){
         service.deleteUser(userId);
+    }
+
+    @GetMapping("/searchById/{userId}")
+    public UserDTO searchById(@PathVariable Integer userId){
+        return service.searchById(userId);
     }
 }

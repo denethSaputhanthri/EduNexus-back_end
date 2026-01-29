@@ -44,4 +44,10 @@ public class UserServiceImpl implements UserService {
         repository.deleteById(userId);
     }
 
+    @Override
+    public UserDTO searchById(Integer userId) {
+        UserDTO userDTO=mapper.map(repository.findById(userId).get(), UserDTO.class);
+        return userDTO;
+    }
+
 }
