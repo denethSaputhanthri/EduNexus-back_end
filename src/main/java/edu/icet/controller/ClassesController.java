@@ -36,4 +36,9 @@ public class ClassesController {
         return service.getAllClasses();
     }
 
+    @GetMapping("/searchById/{classesId}")
+    public ClassesDTO searchById(@PathVariable Integer classesId){
+        return service.searchById(classesId) ;
+    }
+
 }

@@ -45,6 +45,6 @@ public class ClassesServiceImpl implements ClassesService {
 
     @Override
     public ClassesDTO searchById(Integer classesId) {
-        return null;
+        return mapper.map(repository.findById(classesId).get(),ClassesDTO.class);
     }
 }
