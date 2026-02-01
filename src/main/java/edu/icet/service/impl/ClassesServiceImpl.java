@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 @Service
 @RequiredArgsConstructor
@@ -34,7 +35,12 @@ public class ClassesServiceImpl implements ClassesService {
 
     @Override
     public List<ClassesDTO> getAllClasses() {
-        return List.of();
+        List<ClassesEntity>entities=repository.findAll();
+        ArrayList<ClassesDTO>classesDTOArrayList=new ArrayList<>();
+        entities.forEach(classesEntity -> {
+            classesDTOArrayList.add(mapper.map(classesEntity,ClassesDTO.class));
+        });
+        return classesDTOArrayList;
     }
 
     @Override
