@@ -1,6 +1,7 @@
 package edu.icet.service.impl;
 
 import edu.icet.model.dto.ClassesDTO;
+import edu.icet.model.entity.ClassesEntity;
 import edu.icet.repository.ClassesRepository;
 import edu.icet.service.ClassesService;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +19,7 @@ public class ClassesServiceImpl implements ClassesService {
 
     @Override
     public void addClasses(ClassesDTO classes) {
-
+        repository.save(mapper.map(classes, ClassesEntity.class));
     }
 
     @Override
