@@ -11,7 +11,7 @@ import lombok.ToString;
 @ToString
 
 public class ClassesDTO {
-    private Integer classes;
+    private Integer classesId;
     private Integer schoolId;
     private Integer academicYearId;
     private String className;

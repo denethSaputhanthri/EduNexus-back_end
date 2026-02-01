@@ -15,7 +15,7 @@ import lombok.ToString;
 public class ClassesEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer classes;
+    private Integer classesId;
     private Integer schoolId;
     private Integer academicYearId;
     private String className;
