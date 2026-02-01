@@ -26,6 +26,11 @@ public class ClassesController {
         service.updateClasses(classes);
     }
 
+    @DeleteMapping("/delete/details/{classesId}")
+    public void deleteClasses(@PathVariable Integer classesId){
+        service.deleteClasses(classesId);
+    }
+
     @GetMapping("/get/details")
     public List<ClassesDTO> getAllDetails(){
         return service.getAllClasses();

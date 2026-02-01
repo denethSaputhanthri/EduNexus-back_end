@@ -30,7 +30,7 @@ public class ClassesServiceImpl implements ClassesService {
 
     @Override
     public void deleteClasses(Integer classesId) {
-
+        repository.deleteById(classesId);
     }
 
     @Override
