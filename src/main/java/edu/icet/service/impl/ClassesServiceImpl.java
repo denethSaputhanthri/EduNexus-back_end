@@ -25,7 +25,7 @@ public class ClassesServiceImpl implements ClassesService {
 
     @Override
     public void updateClasses(ClassesDTO classes) {
-
+        repository.save(mapper.map(classes, ClassesEntity.class));
     }
 
     @Override
