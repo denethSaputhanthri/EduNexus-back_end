@@ -1,13 +1,20 @@
 package edu.icet.service.impl;
 
 import edu.icet.model.dto.SchoolDTO;
+import edu.icet.repository.SchoolRepository;
 import edu.icet.service.SchoolService;
+import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class SchoolServiceImpl implements SchoolService {
+
+    final SchoolRepository repository;
+    final ModelMapper mapper;
 
     @Override
     public void addSchool(SchoolDTO school) {
