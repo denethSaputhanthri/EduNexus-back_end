@@ -50,6 +50,11 @@ public class SchoolServiceImpl implements SchoolService {
 
     @Override
     public List<SchoolDTO> searchByName(String name) {
-        return List.of();
+        List<SchoolEntity>entities=repository.findByName(name);
+        ArrayList<SchoolDTO>schoolDTOArrayList=new ArrayList<>();
+        entities.forEach(schoolEntity -> {
+            schoolDTOArrayList.add(mapper.map(schoolEntity,SchoolDTO.class));
+        });
+        return schoolDTOArrayList;
     }
 }

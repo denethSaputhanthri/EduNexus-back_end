@@ -40,4 +40,9 @@ public class SchoolController {
     public SchoolDTO searchById(@PathVariable Integer schoolId){
         return service.searchById(schoolId);
     }
+
+    @GetMapping("/searchByName/{name}")
+    public List<SchoolDTO> searchByName(@PathVariable String name){
+        return service.searchByName(name);
+    }
 }
