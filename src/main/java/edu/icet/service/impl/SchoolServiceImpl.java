@@ -25,7 +25,7 @@ public class SchoolServiceImpl implements SchoolService {
 
     @Override
     public void updateSchool(SchoolDTO school) {
-
+        repository.save(mapper.map(school, SchoolEntity.class));
     }
 
     @Override

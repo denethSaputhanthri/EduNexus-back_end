@@ -20,6 +20,12 @@ public class SchoolController {
     public void addSchool(@RequestBody SchoolDTO school){
         service.addSchool(school);
     }
+
+    @PutMapping("/update/details")
+    public void updateSchool(@RequestBody SchoolDTO school){
+        service.updateSchool(school);
+    }
+
     @GetMapping("/get/details")
     public List<SchoolDTO> getAll(){
         return service.getAll();
