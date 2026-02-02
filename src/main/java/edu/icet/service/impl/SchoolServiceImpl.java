@@ -30,7 +30,7 @@ public class SchoolServiceImpl implements SchoolService {
 
     @Override
     public void deleteSchool(Integer schoolId) {
-
+        repository.deleteById(schoolId);
     }
 
     @Override
