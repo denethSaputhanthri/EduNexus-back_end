@@ -45,7 +45,7 @@ public class SchoolServiceImpl implements SchoolService {
 
     @Override
     public SchoolDTO searchById(Integer schoolId) {
-        return null;
+        return mapper.map(repository.findById(schoolId).get(),SchoolDTO.class);
     }
 
     @Override

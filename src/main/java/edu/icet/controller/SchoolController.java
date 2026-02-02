@@ -35,4 +35,9 @@ public class SchoolController {
     public List<SchoolDTO> getAll(){
         return service.getAll();
     }
+
+    @GetMapping("/searchById/{schoolId}")
+    public SchoolDTO searchById(@PathVariable Integer schoolId){
+        return service.searchById(schoolId);
+    }
 }
