@@ -49,4 +49,9 @@ public class AcademicYearController {
     public List<AcademicYearDTO> searchBySchoolId(@PathVariable Integer schoolId){
         return service.searchBySchoolId(schoolId);
     }
+
+    @GetMapping("/searchByIsActive/{isActive}")
+    public List<AcademicYearDTO> searchByIsActive(@PathVariable Boolean isActive){
+        return service.searchByIsActive(isActive);
+    }
 }

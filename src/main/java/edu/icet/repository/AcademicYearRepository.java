@@ -9,4 +9,5 @@ public interface AcademicYearRepository extends JpaRepository<AcademicYearEntity
     List<AcademicYearEntity> findByAcademicYearId(Integer academicYearId);
     List<AcademicYearEntity> findByYearName(String yearName);
     List<AcademicYearEntity> findBySchoolId(Integer schoolId);
+    List<AcademicYearEntity> findByIsActive(Boolean isActive);
 }

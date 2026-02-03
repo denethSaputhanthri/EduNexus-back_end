@@ -74,6 +74,11 @@ public class AcademicYearServiceImpl implements AcademicYearService {
 
     @Override
     public List<AcademicYearDTO> searchByIsActive(Boolean isActive) {
-        return List.of();
+        List<AcademicYearEntity>entities=repository.findByIsActive(isActive);
+        ArrayList<AcademicYearDTO>academicYearDTOArrayList=new ArrayList<>();
+        entities.forEach(academicYearEntity -> {
+            academicYearDTOArrayList.add(mapper.map(academicYearEntity,AcademicYearDTO.class));
+        });
+        return academicYearDTOArrayList;
     }
 }
