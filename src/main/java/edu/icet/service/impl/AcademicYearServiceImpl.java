@@ -1,6 +1,7 @@
 package edu.icet.service.impl;
 
 import edu.icet.model.dto.AcademicYearDTO;
+import edu.icet.model.entity.AcademicYearEntity;
 import edu.icet.repository.AcademicYearRepository;
 import edu.icet.service.AcademicYearService;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +18,7 @@ public class AcademicYearServiceImpl implements AcademicYearService {
 
     @Override
     public void addAcademicYear(AcademicYearDTO year) {
-
+        repository.save(mapper.map(year, AcademicYearEntity.class));
     }
 
     @Override
