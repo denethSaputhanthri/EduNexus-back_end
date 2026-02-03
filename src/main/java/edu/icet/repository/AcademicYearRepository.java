@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface AcademicYearRepository extends JpaRepository<AcademicYearEntity,Integer> {
     List<AcademicYearEntity> findByAcademicYearId(Integer academicYearId);
+    List<AcademicYearEntity> findByYearName(String yearName);
 }
