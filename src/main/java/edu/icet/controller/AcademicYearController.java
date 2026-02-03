@@ -25,6 +25,10 @@ public class AcademicYearController {
     public void updateAcademicYear(@RequestBody AcademicYearDTO year){
         service.updateAcademicYear(year);
     }
+    @DeleteMapping("/delete/details")
+    public void deleteAcademicYear(Integer academicYearId){
+        service.deleteAcademicYear(academicYearId);
+    }
 
     @GetMapping("/get/details")
     public List<AcademicYearDTO>getAllDetails(){

@@ -29,7 +29,7 @@ public class AcademicYearServiceImpl implements AcademicYearService {
 
     @Override
     public void deleteAcademicYear(Integer academicYearId) {
-
+        repository.deleteById(academicYearId);
     }
 
     @Override
