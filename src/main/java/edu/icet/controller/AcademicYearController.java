@@ -20,7 +20,12 @@ public class AcademicYearController {
     public void addAcademicYear(@RequestBody AcademicYearDTO year){
         service.addAcademicYear(year);
     }
-    
+
+    @PutMapping("/update/details")
+    public void updateAcademicYear(@RequestBody AcademicYearDTO year){
+        service.updateAcademicYear(year);
+    }
+
     @GetMapping("/get/details")
     public List<AcademicYearDTO>getAllDetails(){
         return service.getAllDetails();

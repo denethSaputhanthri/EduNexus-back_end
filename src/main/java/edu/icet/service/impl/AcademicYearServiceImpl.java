@@ -24,7 +24,7 @@ public class AcademicYearServiceImpl implements AcademicYearService {
 
     @Override
     public void updateAcademicYear(AcademicYearDTO year) {
-
+        repository.save(mapper.map(year, AcademicYearEntity.class));
     }
 
     @Override
