@@ -4,10 +4,9 @@ import edu.icet.model.dto.AcademicYearDTO;
 import edu.icet.service.AcademicYearService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -20,5 +19,10 @@ public class AcademicYearController {
     @PostMapping("/add/details")
     public void addAcademicYear(@RequestBody AcademicYearDTO year){
         service.addAcademicYear(year);
+    }
+    
+    @GetMapping("/get/details")
+    public List<AcademicYearDTO>getAllDetails(){
+        return service.getAllDetails();
     }
 }

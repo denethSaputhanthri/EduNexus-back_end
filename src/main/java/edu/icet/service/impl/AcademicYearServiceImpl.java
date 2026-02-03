@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 @Service
 @RequiredArgsConstructor
@@ -33,7 +34,12 @@ public class AcademicYearServiceImpl implements AcademicYearService {
 
     @Override
     public List<AcademicYearDTO> getAllDetails() {
-        return List.of();
+        List<AcademicYearEntity>entities=repository.findAll();
+        ArrayList<AcademicYearDTO>academicYearDTOArrayList=new ArrayList<>();
+        entities.forEach(academicYearEntity -> {
+            academicYearDTOArrayList.add(mapper.map(academicYearEntity,AcademicYearDTO.class));
+        });
+        return academicYearDTOArrayList;
     }
 
     @Override
