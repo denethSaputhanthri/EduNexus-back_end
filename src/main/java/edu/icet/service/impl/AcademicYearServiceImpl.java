@@ -1,11 +1,20 @@
 package edu.icet.service.impl;
 
 import edu.icet.model.dto.AcademicYearDTO;
+import edu.icet.repository.AcademicYearRepository;
 import edu.icet.service.AcademicYearService;
+import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
+@RequiredArgsConstructor
 public class AcademicYearServiceImpl implements AcademicYearService {
+
+    final AcademicYearRepository repository;
+    final ModelMapper mapper;
+
     @Override
     public void addAcademicYear(AcademicYearDTO year) {
 
