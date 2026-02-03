@@ -34,4 +34,8 @@ public class AcademicYearController {
     public List<AcademicYearDTO>getAllDetails(){
         return service.getAllDetails();
     }
+    @GetMapping("/searchByAcademicYearId/{academicYearId}")
+    public List<AcademicYearDTO> searchByAcademicYearId(@PathVariable Integer academicYearId){
+        return service.searchByAcademicYearId(academicYearId);
+    }
 }
