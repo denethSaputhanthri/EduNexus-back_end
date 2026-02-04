@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -34,6 +35,11 @@ public class ClassSubjectImpl implements ClassSubjectService {
 
     @Override
     public List<ClassSubjectDTO> getAll() {
-        return List.of();
+        List<ClassSubjectEntity>entities=repository.findAll();
+        ArrayList<ClassSubjectDTO>classSubjectDTOArrayList=new ArrayList<>();
+        entities.forEach(classSubjectEntity -> {
+            classSubjectDTOArrayList.add(mapper.map(classSubjectEntity,ClassSubjectDTO.class));
+        });
+        return classSubjectDTOArrayList;
     }
 }
