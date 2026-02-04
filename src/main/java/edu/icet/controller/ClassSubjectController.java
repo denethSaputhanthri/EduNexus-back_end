@@ -21,6 +21,11 @@ public class ClassSubjectController {
         service.addClassSubject(classSubject);
     }
 
+    @PutMapping("/update/details")
+    public void updateClassSubject(@RequestBody ClassSubjectDTO classSubject){
+        service.updateClassSubject(classSubject);
+    }
+
     @GetMapping("/get/details")
     public List<ClassSubjectDTO>getAllDetails(){
         return service.getAll();

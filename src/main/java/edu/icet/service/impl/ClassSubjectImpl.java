@@ -25,7 +25,7 @@ public class ClassSubjectImpl implements ClassSubjectService {
 
     @Override
     public void updateClassSubject(ClassSubjectDTO classSubject) {
-
+        repository.save(mapper.map(classSubject, ClassSubjectEntity.class));
     }
 
     @Override
