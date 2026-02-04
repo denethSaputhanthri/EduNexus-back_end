@@ -1,6 +1,7 @@
 package edu.icet.service.impl;
 
 import edu.icet.model.dto.ClassSubjectDTO;
+import edu.icet.model.entity.ClassSubjectEntity;
 import edu.icet.repository.ClassSubjectRepository;
 import edu.icet.service.ClassSubjectService;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +19,7 @@ public class ClassSubjectImpl implements ClassSubjectService {
 
     @Override
     public void addClassSubject(ClassSubjectDTO classSubject) {
-
+        repository.save(mapper.map(classSubject, ClassSubjectEntity.class));
     }
 
     @Override
