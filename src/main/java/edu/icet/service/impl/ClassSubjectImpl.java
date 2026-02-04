@@ -30,7 +30,7 @@ public class ClassSubjectImpl implements ClassSubjectService {
 
     @Override
     public void deleteClassSubject(Integer classSubjectId) {
-
+        repository.deleteById(classSubjectId);
     }
 
     @Override

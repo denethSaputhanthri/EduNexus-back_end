@@ -26,6 +26,11 @@ public class ClassSubjectController {
         service.updateClassSubject(classSubject);
     }
 
+    @DeleteMapping("/delete/details/{classSubjectId}")
+    public void deleteClassSubject(@PathVariable Integer classSubjectId){
+        service.deleteClassSubject(classSubjectId);
+    }
+
     @GetMapping("/get/details")
     public List<ClassSubjectDTO>getAllDetails(){
         return service.getAll();
