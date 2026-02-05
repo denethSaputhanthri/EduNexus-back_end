@@ -56,4 +56,9 @@ public class ExamController {
     public List<ExamDTO> searchByExamType(@PathVariable ExamType type){
         return service.searchByType(type);
     }
+
+    @GetMapping("/searchByExamName/{examName}")
+    public List<ExamDTO> searchByExamName(@PathVariable String examName){
+        return service.searchByName(examName);
+    }
 }

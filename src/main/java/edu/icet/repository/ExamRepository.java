@@ -10,4 +10,5 @@ public interface ExamRepository extends JpaRepository<ExamEntity,Integer> {
     List<ExamEntity> findByAcademicYearId(Integer academicYearId);
     List<ExamEntity> findByTermId(Integer termId);
     List<ExamEntity> findByType(ExamType type);
+    List<ExamEntity> findByExamName(String name);
 }
