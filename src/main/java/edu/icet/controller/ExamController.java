@@ -1,0 +1,64 @@
+package edu.icet.controller;
+
+import edu.icet.Enum.ExamType;
+import edu.icet.model.dto.ExamDTO;
+import edu.icet.service.ExamService;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequiredArgsConstructor
+@RequestMapping("/exam")
+@Tag(name = "Exam-Controller",description = "Exam API Collection...")
+public class ExamController {
+
+    final private ExamService service;
+
+    @PostMapping("/add/details")
+    public void addExam(@RequestBody ExamDTO exam){
+        service.addExam(exam);
+    }
+
+    @PutMapping("/update/details")
+    public void updateExam(@RequestBody ExamDTO exam){
+        service.updateExam(exam);
+    }
+
+    @DeleteMapping("/delete/details/{examId}")
+    public void deleteExam(@PathVariable Integer examId){
+        service.deleteExam(examId);
+    }
+
+    @GetMapping("/get/details")
+    public List<ExamDTO>getAll(){
+        return service.getAll();
+    }
+
+    @GetMapping("/searchBy/Id/{examId}")
+    public ExamDTO searchById(@PathVariable Integer examId){
+        return service.searchById(examId) ;
+    }
+
+    @GetMapping("/searchBy/AcademicYearId/{academicYearId}")
+    public List<ExamDTO> searchByAcademicYearId(@PathVariable Integer academicYearId){
+        return service.searchByAcademicYearId(academicYearId);
+    }
+
+    @GetMapping("/searchBy/TermId/{termId}")
+    public List<ExamDTO> searchByTermId(@PathVariable Integer termId){
+        return service.searchByTermId(termId);
+    }
+
+    @GetMapping("/searchBy/ExamType/{type}")
+    public List<ExamDTO> searchByExamType(@PathVariable ExamType type){
+        return service.searchByType(type);
+    }
+
+    @GetMapping("/searchBy/ExamName/{examName}")
+    public List<ExamDTO> searchByExamName(@PathVariable String examName){
+        return service.searchByName(examName);
+    }
+}
