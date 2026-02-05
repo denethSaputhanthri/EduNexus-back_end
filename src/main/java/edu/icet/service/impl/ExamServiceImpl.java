@@ -2,6 +2,7 @@ package edu.icet.service.impl;
 
 import edu.icet.Enum.ExamType;
 import edu.icet.model.dto.ExamDTO;
+import edu.icet.model.entity.ExamEntity;
 import edu.icet.repository.ExamRepository;
 import edu.icet.service.ExamService;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +20,7 @@ public class ExamServiceImpl implements ExamService {
 
     @Override
     public void addExam(ExamDTO exam) {
-
+        repository.save(mapper.map(exam, ExamEntity.class));
     }
 
     @Override
