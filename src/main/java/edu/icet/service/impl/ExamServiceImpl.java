@@ -2,13 +2,20 @@ package edu.icet.service.impl;
 
 import edu.icet.Enum.ExamType;
 import edu.icet.model.dto.ExamDTO;
+import edu.icet.repository.ExamRepository;
 import edu.icet.service.ExamService;
+import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class ExamServiceImpl implements ExamService {
+
+    final private ExamRepository repository;
+    final private ModelMapper mapper;
 
     @Override
     public void addExam(ExamDTO exam) {
