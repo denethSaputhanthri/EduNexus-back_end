@@ -31,7 +31,7 @@ public class ExamServiceImpl implements ExamService {
 
     @Override
     public void deleteExam(Integer examId) {
-
+        repository.deleteById(examId);
     }
 
     @Override

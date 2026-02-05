@@ -26,6 +26,11 @@ public class ExamController {
         service.updateExam(exam);
     }
 
+    @DeleteMapping("/delete/details/{examId}")
+    public void deleteExam(@PathVariable Integer examId){
+        service.deleteExam(examId);
+    }
+
     @GetMapping("/get/details")
     public List<ExamDTO>getAll(){
         return service.getAll();
