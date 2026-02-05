@@ -1,5 +1,6 @@
 package edu.icet.controller;
 
+import edu.icet.Enum.ExamType;
 import edu.icet.model.dto.ExamDTO;
 import edu.icet.service.ExamService;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -49,5 +50,10 @@ public class ExamController {
     @GetMapping("/searchByTermId/{termId}")
     public List<ExamDTO> searchByTermId(@PathVariable Integer termId){
         return service.searchByTermId(termId);
+    }
+
+    @GetMapping("/searchByExamType/{type}")
+    public List<ExamDTO> searchByExamType(@PathVariable ExamType type){
+        return service.searchByType(type);
     }
 }
