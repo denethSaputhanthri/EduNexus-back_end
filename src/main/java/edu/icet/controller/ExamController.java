@@ -35,4 +35,9 @@ public class ExamController {
     public List<ExamDTO>getAll(){
         return service.getAll();
     }
+
+    @GetMapping("/searchById/{examId}")
+    public ExamDTO searchById(@PathVariable Integer examId){
+        return service.searchById(examId) ;
+    }
 }

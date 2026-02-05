@@ -46,7 +46,7 @@ public class ExamServiceImpl implements ExamService {
 
     @Override
     public ExamDTO searchById(Integer examId) {
-        return null;
+        return mapper.map(repository.findById(examId).get(),ExamDTO.class);
     }
 
     @Override
