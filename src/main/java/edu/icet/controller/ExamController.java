@@ -40,4 +40,9 @@ public class ExamController {
     public ExamDTO searchById(@PathVariable Integer examId){
         return service.searchById(examId) ;
     }
+
+    @GetMapping("/searchByAcademicYearId/{academicYearId}")
+    public List<ExamDTO> searchByAcademicYearId(@PathVariable Integer academicYearId){
+        return service.searchByAcademicYearId(academicYearId);
+    }
 }
