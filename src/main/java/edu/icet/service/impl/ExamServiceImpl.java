@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -35,7 +36,12 @@ public class ExamServiceImpl implements ExamService {
 
     @Override
     public List<ExamDTO> getAll() {
-        return List.of();
+        List<ExamEntity>entities=repository.findAll();
+        ArrayList<ExamDTO>examDTOArrayList=new ArrayList<>();
+        entities.forEach(examEntity -> {
+            examDTOArrayList.add(mapper.map(examEntity, ExamDTO.class));
+        });
+        return examDTOArrayList;
     }
 
     @Override

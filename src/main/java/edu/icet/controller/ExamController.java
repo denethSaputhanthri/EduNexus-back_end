@@ -4,10 +4,9 @@ import edu.icet.model.dto.ExamDTO;
 import edu.icet.service.ExamService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -20,5 +19,10 @@ public class ExamController {
     @PostMapping("/add/details")
     public void addExam(@RequestBody ExamDTO exam){
         service.addExam(exam);
+    }
+
+    @GetMapping("/get/details")
+    public List<ExamDTO>getAll(){
+        return service.getAll();
     }
 }
