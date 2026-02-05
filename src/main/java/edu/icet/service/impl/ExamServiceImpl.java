@@ -61,7 +61,12 @@ public class ExamServiceImpl implements ExamService {
 
     @Override
     public List<ExamDTO> searchByTermId(Integer termId) {
-        return List.of();
+        List<ExamEntity>entities=repository.findByTermId(termId);
+        ArrayList<ExamDTO>examDTOArrayList=new ArrayList<>();
+        entities.forEach(examEntity -> {
+            examDTOArrayList.add(mapper.map(examEntity, ExamDTO.class));
+        });
+        return examDTOArrayList;
     }
 
     @Override
