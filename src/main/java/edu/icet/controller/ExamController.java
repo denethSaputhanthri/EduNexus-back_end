@@ -21,6 +21,11 @@ public class ExamController {
         service.addExam(exam);
     }
 
+    @PutMapping("/update/details")
+    public void updateExam(@RequestBody ExamDTO exam){
+        service.updateExam(exam);
+    }
+
     @GetMapping("/get/details")
     public List<ExamDTO>getAll(){
         return service.getAll();

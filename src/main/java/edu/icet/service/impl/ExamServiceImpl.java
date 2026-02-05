@@ -26,7 +26,7 @@ public class ExamServiceImpl implements ExamService {
 
     @Override
     public void updateExam(ExamDTO exam) {
-
+        repository.save(mapper.map(exam,ExamEntity.class));
     }
 
     @Override
