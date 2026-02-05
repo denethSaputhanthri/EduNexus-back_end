@@ -37,27 +37,27 @@ public class ExamController {
         return service.getAll();
     }
 
-    @GetMapping("/searchById/{examId}")
+    @GetMapping("/searchBy/Id/{examId}")
     public ExamDTO searchById(@PathVariable Integer examId){
         return service.searchById(examId) ;
     }
 
-    @GetMapping("/searchByAcademicYearId/{academicYearId}")
+    @GetMapping("/searchBy/AcademicYearId/{academicYearId}")
     public List<ExamDTO> searchByAcademicYearId(@PathVariable Integer academicYearId){
         return service.searchByAcademicYearId(academicYearId);
     }
 
-    @GetMapping("/searchByTermId/{termId}")
+    @GetMapping("/searchBy/TermId/{termId}")
     public List<ExamDTO> searchByTermId(@PathVariable Integer termId){
         return service.searchByTermId(termId);
     }
 
-    @GetMapping("/searchByExamType/{type}")
+    @GetMapping("/searchBy/ExamType/{type}")
     public List<ExamDTO> searchByExamType(@PathVariable ExamType type){
         return service.searchByType(type);
     }
 
-    @GetMapping("/searchByExamName/{examName}")
+    @GetMapping("/searchBy/ExamName/{examName}")
     public List<ExamDTO> searchByExamName(@PathVariable String examName){
         return service.searchByName(examName);
     }
