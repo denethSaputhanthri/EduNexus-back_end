@@ -50,6 +50,11 @@ public class TimeTableServiceImpl implements TimeTableService {
 
     @Override
     public List<TimeTableDTO> searchByDayTimeTable(DayOfWeek day) {
-        return List.of();
+        List<TimeTableEntity>entities=repository.findByDay(day);
+        ArrayList<TimeTableDTO>timeTableDTOArrayList=new ArrayList<>();
+        entities.forEach(timeTableEntity -> {
+            timeTableDTOArrayList.add(mapper.map(timeTableEntity,TimeTableDTO.class));
+        });
+        return timeTableDTOArrayList;
     }
 }

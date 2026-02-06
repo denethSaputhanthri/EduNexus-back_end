@@ -1,5 +1,6 @@
 package edu.icet.controller;
 
+import edu.icet.Enum.DayOfWeek;
 import edu.icet.model.dto.TimeTableDTO;
 import edu.icet.service.TimeTableService;
 import io.swagger.v3.oas.annotations.tags.Tag;
@@ -39,5 +40,9 @@ public class TimeTableController {
     @GetMapping("/get/details")
     public List<TimeTableDTO>getAll(){
         return service.getAll();
+    }
+    @GetMapping("/searchByDay/{day}")
+    public List<TimeTableDTO> searchByDay(DayOfWeek day){
+        return service.searchByDayTimeTable(day);
     }
 }
