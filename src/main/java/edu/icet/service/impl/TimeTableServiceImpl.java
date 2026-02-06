@@ -2,12 +2,19 @@ package edu.icet.service.impl;
 
 import edu.icet.Enum.DayOfWeek;
 import edu.icet.model.dto.TimeTableDTO;
+import edu.icet.repository.TimeTableRepository;
 import edu.icet.service.TimeTableService;
+import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
+@RequiredArgsConstructor
 public class TimeTableServiceImpl implements TimeTableService {
+
+    final private TimeTableRepository repository;
+    final private ModelMapper mapper;
 
     @Override
     public void addAll(TimeTableDTO timeTable) {
