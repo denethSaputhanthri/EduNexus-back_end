@@ -21,6 +21,11 @@ public class TimeTableController {
         service.addAll(timeTable);
     }
 
+    @PutMapping("/update/details")
+    public void updateTimeTable(@RequestBody TimeTableDTO timeTable){
+        service.updateAll(timeTable);
+    }
+
     @GetMapping("/get/details")
     public List<TimeTableDTO>getAll(){
         return service.getAll();

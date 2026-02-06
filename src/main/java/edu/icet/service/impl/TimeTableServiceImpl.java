@@ -25,7 +25,7 @@ public class TimeTableServiceImpl implements TimeTableService {
 
     @Override
     public void updateAll(TimeTableDTO timeTable) {
-
+        repository.save(mapper.map(timeTable, TimeTableEntity.class));
     }
 
     @Override
