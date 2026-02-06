@@ -26,6 +26,11 @@ public class TimeTableController {
         service.updateAll(timeTable);
     }
 
+    @DeleteMapping("/delete/details/{timeTableId}")
+    public void deleteTimeTable(Integer timeTableId){
+        service.deleteAll(timeTableId);
+    }
+
     @GetMapping("/get/details")
     public List<TimeTableDTO>getAll(){
         return service.getAll();

@@ -30,7 +30,7 @@ public class TimeTableServiceImpl implements TimeTableService {
 
     @Override
     public void deleteAll(Integer timeTableId) {
-
+        repository.deleteById(timeTableId);
     }
 
     @Override
