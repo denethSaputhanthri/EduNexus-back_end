@@ -4,9 +4,9 @@ import edu.icet.model.dto.TimeTableDTO;
 import edu.icet.service.TimeTableService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -17,8 +17,12 @@ public class TimeTableController {
     final private TimeTableService service;
 
     @PostMapping("/add/details")
-    public void addTimeTable(TimeTableDTO timeTable){
+    public void addTimeTable(@RequestBody TimeTableDTO timeTable){
         service.addAll(timeTable);
     }
 
+    @GetMapping("/get/details")
+    public List<TimeTableDTO>getAll(){
+        return service.getAll();
+    }
 }
