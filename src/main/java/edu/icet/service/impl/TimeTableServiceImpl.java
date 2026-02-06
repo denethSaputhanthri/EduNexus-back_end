@@ -2,6 +2,7 @@ package edu.icet.service.impl;
 
 import edu.icet.Enum.DayOfWeek;
 import edu.icet.model.dto.TimeTableDTO;
+import edu.icet.model.entity.TimeTableEntity;
 import edu.icet.repository.TimeTableRepository;
 import edu.icet.service.TimeTableService;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +19,7 @@ public class TimeTableServiceImpl implements TimeTableService {
 
     @Override
     public void addAll(TimeTableDTO timeTable) {
-
+        repository.save(mapper.map(timeTable, TimeTableEntity.class));
     }
 
     @Override
