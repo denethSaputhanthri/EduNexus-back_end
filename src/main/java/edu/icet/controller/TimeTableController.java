@@ -27,8 +27,13 @@ public class TimeTableController {
     }
 
     @DeleteMapping("/delete/details/{timeTableId}")
-    public void deleteTimeTable(Integer timeTableId){
+    public void deleteTimeTable(@PathVariable Integer timeTableId){
         service.deleteAll(timeTableId);
+    }
+
+    @GetMapping("/searchById/{timeTableId}")
+    public TimeTableDTO searchById(@PathVariable Integer timeTableId){
+        return service.searchById(timeTableId);
     }
 
     @GetMapping("/get/details")

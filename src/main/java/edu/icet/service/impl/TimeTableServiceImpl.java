@@ -45,7 +45,7 @@ public class TimeTableServiceImpl implements TimeTableService {
 
     @Override
     public TimeTableDTO searchById(Integer timeTableId) {
-        return null;
+        return mapper.map(repository.findById(timeTableId).get(), TimeTableDTO.class);
     }
 
     @Override
