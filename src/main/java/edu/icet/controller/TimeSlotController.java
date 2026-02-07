@@ -36,6 +36,9 @@ public class TimeSlotController {
     public List<TimeSlotDTO> getTimeSlot(){
         return service.getAll();
     }
-
+    @GetMapping("/searchById/{timeSlotId}")
+    public TimeSlotDTO searchByTimeSlotID(@PathVariable Integer timeSlotId){
+        return service.searchById(timeSlotId);
+    }
 
 }

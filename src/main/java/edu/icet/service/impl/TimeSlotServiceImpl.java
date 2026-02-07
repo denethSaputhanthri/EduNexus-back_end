@@ -45,7 +45,7 @@ public class TimeSlotServiceImpl implements TimeSlotService{
     }
 
     @Override
-    public List<TimeSlotDTO> searchById(Integer timeSlotId) {
-        return List.of();
+    public TimeSlotDTO searchById(Integer timeSlotId) {
+        return mapper.map(repository.findByTimeSlotId(timeSlotId),TimeSlotDTO.class);
     }
 }

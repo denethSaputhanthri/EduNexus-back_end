@@ -10,5 +10,5 @@ public interface TimeSlotService {
     void updateAll(TimeSlotDTO timeSlot);
     void deleteAll(Integer timeSlotId);
     List<TimeSlotDTO> getAll();
-    List<TimeSlotDTO>searchById(Integer timeSlotId);
+    TimeSlotDTO searchById(Integer timeSlotId);
 }
