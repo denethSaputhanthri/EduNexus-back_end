@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class TimeSlotController {
 
     final private TimeSlotService service;
+
     @PostMapping("/add/details")
     public void addTimeSlot(@RequestBody TimeSlotDTO timeSlot){
         service.addAll(timeSlot);
