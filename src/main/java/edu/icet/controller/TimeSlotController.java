@@ -5,10 +5,9 @@ import edu.icet.model.dto.TimeSlotDTO;
 import edu.icet.service.TimeSlotService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -22,5 +21,11 @@ public class TimeSlotController {
     public void addTimeSlot(@RequestBody TimeSlotDTO timeSlot){
         service.addAll(timeSlot);
     }
+
+    @GetMapping("/get/details")
+    public List<TimeSlotDTO> getTimeSlot(){
+        return service.getAll();
+    }
+
 
 }
