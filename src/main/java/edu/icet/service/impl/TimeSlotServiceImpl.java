@@ -26,7 +26,7 @@ public class TimeSlotServiceImpl implements TimeSlotService{
 
     @Override
     public void updateAll(TimeSlotDTO timeSlot) {
-
+        repository.save(mapper.map(timeSlot,TimeSlotEntity.class));
     }
 
     @Override

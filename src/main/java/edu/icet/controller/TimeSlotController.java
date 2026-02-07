@@ -22,6 +22,11 @@ public class TimeSlotController {
         service.addAll(timeSlot);
     }
 
+    @PutMapping("/update/details")
+    public void updateTimeSlot(@RequestBody TimeSlotDTO timeSlot){
+        service.updateAll(timeSlot);
+    }
+
     @GetMapping("/get/details")
     public List<TimeSlotDTO> getTimeSlot(){
         return service.getAll();
