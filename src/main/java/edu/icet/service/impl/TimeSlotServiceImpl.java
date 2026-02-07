@@ -31,7 +31,7 @@ public class TimeSlotServiceImpl implements TimeSlotService{
 
     @Override
     public void deleteAll(Integer timeSlotId) {
-
+        repository.deleteById(timeSlotId);
     }
 
     @Override

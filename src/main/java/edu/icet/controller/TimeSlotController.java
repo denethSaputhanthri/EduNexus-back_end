@@ -6,6 +6,7 @@ import edu.icet.service.TimeSlotService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.service.annotation.DeleteExchange;
 
 import java.util.List;
 
@@ -27,6 +28,10 @@ public class TimeSlotController {
         service.updateAll(timeSlot);
     }
 
+    @DeleteMapping("/delete/datils/{timeSlotId}")
+    public void delete(@PathVariable Integer timeSlotId){
+        service.deleteAll(timeSlotId);
+    }
     @GetMapping("/get/details")
     public List<TimeSlotDTO> getTimeSlot(){
         return service.getAll();
