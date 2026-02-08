@@ -45,7 +45,7 @@ public class MarkServiceImpl implements MarkService {
 
     @Override
     public MarkDTO searchById(Integer markId) {
-        return null;
+        return mapper.map(repository.findById(markId).get(),MarkDTO.class);
     }
 
     @Override

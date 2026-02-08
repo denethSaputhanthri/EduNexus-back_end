@@ -31,8 +31,15 @@ public class MarkController {
         service.deleteMark(markId);
     }
 
+    @GetMapping("/searchById/{markId}")
+    public MarkDTO searchById(@PathVariable Integer markId){
+        return service.searchById(markId);
+    }
+
     @GetMapping("/get/details")
     public List<MarkDTO>getAll(){
         return service.getAllMark();
     }
+
+
 }
