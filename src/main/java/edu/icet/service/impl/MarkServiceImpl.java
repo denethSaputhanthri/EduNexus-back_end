@@ -1,6 +1,7 @@
 package edu.icet.service.impl;
 
 import edu.icet.model.dto.MarkDTO;
+import edu.icet.model.entity.MarkEntity;
 import edu.icet.repository.MarkRepository;
 import edu.icet.service.MarkService;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +19,7 @@ public class MarkServiceImpl implements MarkService {
 
     @Override
     public void addMark(MarkDTO mark) {
-
+        repository.save(mapper.map(mark,MarkEntity.class));
     }
 
     @Override
