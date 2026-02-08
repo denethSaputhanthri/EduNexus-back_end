@@ -21,6 +21,11 @@ public class MarkController {
         service.addMark(mark);
     }
 
+    @PutMapping("/update/details")
+    public void updateMark(@RequestBody MarkDTO mark){
+        service.updateMark(mark);
+    }
+
     @GetMapping("/get/details")
     public List<MarkDTO>getAll(){
         return service.getAllMark();

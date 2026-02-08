@@ -25,7 +25,7 @@ public class MarkServiceImpl implements MarkService {
 
     @Override
     public void updateMark(MarkDTO mark) {
-
+        repository.save(mapper.map(mark,MarkEntity.class));
     }
 
     @Override
