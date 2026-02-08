@@ -26,6 +26,11 @@ public class MarkController {
         service.updateMark(mark);
     }
 
+    @DeleteMapping("/delete/details/{markId}")
+    public void deleteMark(@PathVariable Integer markId){
+        service.deleteMark(markId);
+    }
+
     @GetMapping("/get/details")
     public List<MarkDTO>getAll(){
         return service.getAllMark();
