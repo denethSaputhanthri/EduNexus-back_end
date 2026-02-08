@@ -10,5 +10,5 @@ public interface MarkService {
     void deleteMark(Integer markId);
     List<MarkDTO>getAllMark();
     MarkDTO searchById(Integer markId);
-    List<MarkDTO> searchByStudentId(Integer studentId);
+    MarkDTO searchByStudentId(Integer studentId);
 }

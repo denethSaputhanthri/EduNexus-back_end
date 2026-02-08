@@ -41,5 +41,9 @@ public class MarkController {
         return service.getAllMark();
     }
 
+    @GetMapping("/searchByStudentId/{studentId}")
+    public MarkDTO searchByStudentId(@PathVariable Integer studentId){
+        return service.searchByStudentId(studentId);
+    }
 
 }

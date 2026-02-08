@@ -49,7 +49,9 @@ public class MarkServiceImpl implements MarkService {
     }
 
     @Override
-    public List<MarkDTO> searchByStudentId(Integer studentId) {
-        return List.of();
+    public MarkDTO searchByStudentId(Integer studentId) {
+        return mapper.map(repository.findById(studentId).get(),MarkDTO.class);
     }
+
+
 }
