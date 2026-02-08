@@ -4,10 +4,9 @@ import edu.icet.model.dto.MarkDTO;
 import edu.icet.service.MarkService;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -22,4 +21,8 @@ public class MarkController {
         service.addMark(mark);
     }
 
+    @GetMapping("/get/details")
+    public List<MarkDTO>getAll(){
+        return service.getAllMark();
+    }
 }

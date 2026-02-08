@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -34,7 +35,12 @@ public class MarkServiceImpl implements MarkService {
 
     @Override
     public List<MarkDTO> getAllMark() {
-        return List.of();
+        List<MarkEntity>entities=repository.findAll();
+        ArrayList<MarkDTO>markDTOArrayList=new ArrayList<>();
+        entities.forEach(markEntity -> {
+            markDTOArrayList.add(mapper.map(markEntity,MarkDTO.class));
+        });
+        return markDTOArrayList;
     }
 
     @Override
