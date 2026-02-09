@@ -1,6 +1,6 @@
 package edu.icet.service.impl;
 
-import edu.icet.Enum.DayOfWeek;
+import edu.icet.utill.DayOfWeek;
 import edu.icet.model.dto.TimeTableDTO;
 import edu.icet.model.entity.TimeTableEntity;
 import edu.icet.repository.TimeTableRepository;

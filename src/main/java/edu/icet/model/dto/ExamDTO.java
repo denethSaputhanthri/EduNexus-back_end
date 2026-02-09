@@ -1,6 +1,6 @@
 package edu.icet.model.dto;
 
-import edu.icet.Enum.ExamType;
+import edu.icet.utill.ExamType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

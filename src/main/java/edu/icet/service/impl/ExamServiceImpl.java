@@ -1,6 +1,6 @@
 package edu.icet.service.impl;
 
-import edu.icet.Enum.ExamType;
+import edu.icet.utill.ExamType;
 import edu.icet.model.dto.ExamDTO;
 import edu.icet.model.entity.ExamEntity;
 import edu.icet.repository.ExamRepository;

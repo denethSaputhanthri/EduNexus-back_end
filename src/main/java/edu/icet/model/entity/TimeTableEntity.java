@@ -1,6 +1,6 @@
 package edu.icet.model.entity;
 
-import edu.icet.Enum.DayOfWeek;
+import edu.icet.utill.DayOfWeek;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

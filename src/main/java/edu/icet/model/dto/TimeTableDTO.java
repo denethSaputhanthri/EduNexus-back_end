@@ -1,6 +1,6 @@
 package edu.icet.model.dto;
 
-import edu.icet.Enum.DayOfWeek;
+import edu.icet.utill.DayOfWeek;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

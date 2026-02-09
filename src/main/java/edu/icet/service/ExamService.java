@@ -1,6 +1,6 @@
 package edu.icet.service;
 
-import edu.icet.Enum.ExamType;
+import edu.icet.utill.ExamType;
 import edu.icet.model.dto.ExamDTO;
 
 import java.util.List;

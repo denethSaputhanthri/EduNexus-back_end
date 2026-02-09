@@ -1,6 +1,6 @@
 package edu.icet.controller;
 
-import edu.icet.Enum.DayOfWeek;
+import edu.icet.utill.DayOfWeek;
 import edu.icet.model.dto.TimeTableDTO;
 import edu.icet.service.TimeTableService;
 import io.swagger.v3.oas.annotations.tags.Tag;
