@@ -1,15 +1,23 @@
 package edu.icet.service.impl;
 
 import edu.icet.model.dto.AttendanceDTO;
+import edu.icet.repository.AttendanceRepository;
 import edu.icet.service.AttendanceService;
 import edu.icet.utill.AStatus;
+import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class AttendanceServiceImpl implements AttendanceService {
+
+    final private AttendanceRepository repository;
+    final private ModelMapper mapper;
+
     @Override
     public void addAttendance(AttendanceDTO attendance) {
 

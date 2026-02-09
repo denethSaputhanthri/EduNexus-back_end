@@ -1,11 +1,17 @@
 package edu.icet.controller;
 
+import edu.icet.service.AttendanceService;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequiredArgsConstructor
 @RequestMapping("/attendance")
 @Tag(name = "Attendance-Controller",description = "Attendance API Collection...")
 public class AttendanceController {
+
+    final private AttendanceService service;
+
 }
