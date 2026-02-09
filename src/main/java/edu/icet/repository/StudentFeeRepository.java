@@ -1,6 +1,7 @@
 package edu.icet.repository;
 
 import edu.icet.model.entity.StudentFeeEntity;
+import edu.icet.utill.FeeStatus;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -8,4 +9,5 @@ import java.util.List;
 public interface StudentFeeRepository extends JpaRepository<StudentFeeEntity,Integer> {
     List<StudentFeeEntity> findByStudentId(Integer studentId);
     List<StudentFeeEntity> findByFeeStructureId(Integer feeStructureId);
+    List<StudentFeeEntity> findByFeeStatus(FeeStatus feeStatus);
 }

@@ -2,6 +2,7 @@ package edu.icet.controller;
 
 import edu.icet.model.dto.StudentFeeDTO;
 import edu.icet.service.StudentFeeService;
+import edu.icet.utill.FeeStatus;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -49,6 +50,11 @@ public class StudentFeeController {
     @GetMapping("/searchByFeeStructure/{feeStructureId}")
     public List<StudentFeeDTO> searchByFeeStructureId(@PathVariable Integer feeStructureId){
         return service.searchByFeeStructure(feeStructureId);
+    }
+
+    @GetMapping("/searchByFeeStatus/{status}")
+    public List<StudentFeeDTO> searchByStatus(@PathVariable FeeStatus status){
+        return service.searchByStatus(status);
     }
 
 }
