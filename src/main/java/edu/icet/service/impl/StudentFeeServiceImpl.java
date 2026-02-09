@@ -51,7 +51,12 @@ public class StudentFeeServiceImpl implements StudentFeeService {
 
     @Override
     public List<StudentFeeDTO> searchByStudentId(Integer studentId) {
-        return List.of();
+        List<StudentFeeEntity>entities=repository.findByStudentId(studentId);
+        ArrayList<StudentFeeDTO>studentFeeDTOArrayList=new ArrayList<>();
+        entities.forEach(studentFeeEntity -> {
+            studentFeeDTOArrayList.add(mapper.map(studentFeeEntity,StudentFeeDTO.class));
+        });
+        return studentFeeDTOArrayList;
     }
 
     @Override

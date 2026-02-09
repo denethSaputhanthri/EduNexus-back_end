@@ -41,4 +41,9 @@ public class StudentFeeController {
         return service.searchById(studentFeeId);
     }
 
+    @GetMapping("/searchByStudent/{studentId}")
+    public List<StudentFeeDTO> searchByStudentId(@PathVariable Integer studentId){
+        return service.searchByStudentId(studentId) ;
+    }
+
 }
