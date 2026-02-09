@@ -7,6 +7,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -37,12 +38,12 @@ public class AttendanceController {
         return service.getAll();
     }
 
-    @GetMapping("/searchBy{attendanceId}")
+    @GetMapping("/searchByAttendance/{attendanceId}")
     public AttendanceDTO searchByAttendanceId(@PathVariable Integer attendanceId){
         return service.searchByAttendanceId(attendanceId);
     }
 
-    @GetMapping("/searchBy/{studentId}")
+    @GetMapping("/searchByStudent/{studentId}")
     public List<AttendanceDTO> searchByStudentId(@PathVariable Integer studentId){
         return service.searchByStudentId(studentId);
     }
@@ -55,5 +56,10 @@ public class AttendanceController {
     @GetMapping("/searchByStatus/{status}")
     public List<AttendanceDTO> searchByStatus(@PathVariable AStatus status){
         return service.searchByStatus(status);
+    }
+
+    @GetMapping("/searchByDate/{date}")
+    public List<AttendanceDTO> searchByDate(@PathVariable LocalDate date){
+        return service.searchByDate(date);
     }
 }

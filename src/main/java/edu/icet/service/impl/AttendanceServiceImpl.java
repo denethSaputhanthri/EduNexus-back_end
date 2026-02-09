@@ -82,6 +82,11 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     @Override
     public List<AttendanceDTO> searchByDate(LocalDate date) {
-        return List.of();
+        List<AttendanceEntity>entities=repository.findByDate(date);
+        ArrayList<AttendanceDTO>attendanceDTOArrayList=new ArrayList<>();
+        entities.forEach(attendanceEntity -> {
+            attendanceDTOArrayList.add(mapper.map(attendanceEntity, AttendanceDTO.class));
+        });
+        return attendanceDTOArrayList;
     }
 }
