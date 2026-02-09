@@ -13,7 +13,7 @@ public interface AttendanceService {
     void deleteAttendance(Integer attendanceId);
     List<AttendanceDTO>getAll();
     AttendanceDTO searchByAttendanceId(Integer attendanceId);
-    AttendanceDTO searchByStudentId(Integer studentId);
+    List<AttendanceDTO> searchByStudentId(Integer studentId);
     List<AttendanceDTO> searchByClassId(Integer classId);
     List<AttendanceDTO> searchByStatus(AStatus status);
     List<AttendanceDTO> searchByDate(LocalDate date);

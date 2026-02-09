@@ -36,8 +36,13 @@ public class AttendanceController {
         return service.getAll();
     }
 
-    @GetMapping("/searchBy/{attendanceId}")
+    @GetMapping("/searchBy{attendanceId}")
     public AttendanceDTO searchByAttendanceId(@PathVariable Integer attendanceId){
         return service.searchByAttendanceId(attendanceId);
+    }
+
+    @GetMapping("/searchBy/{studentId}")
+    public List<AttendanceDTO> searchByStudentId(@PathVariable Integer studentId){
+        return service.searchByStudentId(studentId);
     }
 }
