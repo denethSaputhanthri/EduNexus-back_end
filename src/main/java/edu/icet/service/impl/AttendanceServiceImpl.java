@@ -47,7 +47,7 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     @Override
     public AttendanceDTO searchByAttendanceId(Integer attendanceId) {
-        return null;
+        return mapper.map(repository.findById(attendanceId).get(), AttendanceDTO.class);
     }
 
     @Override

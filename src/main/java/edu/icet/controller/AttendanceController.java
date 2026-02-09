@@ -35,4 +35,9 @@ public class AttendanceController {
     public List<AttendanceDTO>getAll(){
         return service.getAll();
     }
+
+    @GetMapping("/searchBy/{attendanceId}")
+    public AttendanceDTO searchByAttendanceId(@PathVariable Integer attendanceId){
+        return service.searchByAttendanceId(attendanceId);
+    }
 }
