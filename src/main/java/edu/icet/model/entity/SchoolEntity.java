@@ -1,6 +1,6 @@
 package edu.icet.model.entity;
 
-import edu.icet.Enum.Status;
+import edu.icet.utill.Status;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

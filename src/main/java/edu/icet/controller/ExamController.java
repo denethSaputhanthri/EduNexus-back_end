@@ -1,6 +1,6 @@
 package edu.icet.controller;
 
-import edu.icet.Enum.ExamType;
+import edu.icet.utill.ExamType;
 import edu.icet.model.dto.ExamDTO;
 import edu.icet.service.ExamService;
 import io.swagger.v3.oas.annotations.tags.Tag;

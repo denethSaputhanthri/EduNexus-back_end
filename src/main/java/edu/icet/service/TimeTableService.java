@@ -1,6 +1,6 @@
 package edu.icet.service;
 
-import edu.icet.Enum.DayOfWeek;
+import edu.icet.utill.DayOfWeek;
 import edu.icet.model.dto.TimeTableDTO;
 
 import java.util.List;

@@ -1,6 +1,6 @@
 package edu.icet.repository;
 
-import edu.icet.Enum.DayOfWeek;
+import edu.icet.utill.DayOfWeek;
 import edu.icet.model.entity.TimeTableEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
