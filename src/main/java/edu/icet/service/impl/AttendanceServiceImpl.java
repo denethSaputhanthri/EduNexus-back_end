@@ -62,7 +62,12 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     @Override
     public List<AttendanceDTO> searchByClassId(Integer classId) {
-        return List.of();
+        List<AttendanceEntity>entities=repository.findByClassId(classId);
+        ArrayList<AttendanceDTO>attendanceDTOArrayList=new ArrayList<>();
+        entities.forEach(attendanceEntity -> {
+            attendanceDTOArrayList.add(mapper.map(attendanceEntity, AttendanceDTO.class));
+        });
+        return attendanceDTOArrayList;
     }
 
     @Override

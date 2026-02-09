@@ -45,4 +45,9 @@ public class AttendanceController {
     public List<AttendanceDTO> searchByStudentId(@PathVariable Integer studentId){
         return service.searchByStudentId(studentId);
     }
+
+    @GetMapping("/searchByClass/{classId}")
+    public List<AttendanceDTO> searchByClassId(@PathVariable Integer classId){
+        return service.searchByClassId(classId);
+    }
 }
