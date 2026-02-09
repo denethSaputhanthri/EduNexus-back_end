@@ -1,6 +1,7 @@
 package edu.icet.service.impl;
 
 import edu.icet.model.dto.StudentFeeDTO;
+import edu.icet.model.entity.StudentFeeEntity;
 import edu.icet.repository.StudentFeeRepository;
 import edu.icet.service.StudentFeeService;
 import edu.icet.utill.FeeStatus;
@@ -19,7 +20,7 @@ public class StudentFeeServiceImpl implements StudentFeeService {
 
     @Override
     public void addStudentFee(StudentFeeDTO studentFee) {
-
+        repository.save(mapper.map(studentFee, StudentFeeEntity.class));
     }
 
     @Override
