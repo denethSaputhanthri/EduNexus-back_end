@@ -10,6 +10,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -36,7 +37,12 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     @Override
     public List<AttendanceDTO> getAll() {
-        return List.of();
+        List<AttendanceEntity>entities=repository.findAll();
+        ArrayList<AttendanceDTO>attendanceDTOArrayList=new ArrayList<>();
+        entities.forEach(attendanceEntity -> {
+            attendanceDTOArrayList.add(mapper.map(attendanceEntity, AttendanceDTO.class));
+        });
+        return attendanceDTOArrayList;
     }
 
     @Override
