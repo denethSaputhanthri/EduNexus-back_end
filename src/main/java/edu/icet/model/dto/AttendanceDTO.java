@@ -1,5 +1,6 @@
 package edu.icet.model.dto;
 
+import edu.icet.utill.AStatus;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -12,6 +13,7 @@ public class AttendanceDTO {
     private Integer attendanceId;
     private Integer studentId;
     private Integer classId;
+    private AStatus status;
     private LocalDate date;
     private String remark;
 }
