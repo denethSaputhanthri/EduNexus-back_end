@@ -2,6 +2,7 @@ package edu.icet.controller;
 
 import edu.icet.model.dto.AttendanceDTO;
 import edu.icet.service.AttendanceService;
+import edu.icet.utill.AStatus;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
@@ -49,5 +50,10 @@ public class AttendanceController {
     @GetMapping("/searchByClass/{classId}")
     public List<AttendanceDTO> searchByClassId(@PathVariable Integer classId){
         return service.searchByClassId(classId);
+    }
+
+    @GetMapping("/searchByStatus/{status}")
+    public List<AttendanceDTO> searchByStatus(@PathVariable AStatus status){
+        return service.searchByStatus(status);
     }
 }

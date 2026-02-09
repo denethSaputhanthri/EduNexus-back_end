@@ -72,7 +72,12 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     @Override
     public List<AttendanceDTO> searchByStatus(AStatus status) {
-        return List.of();
+        List<AttendanceEntity>entities=repository.findByStatus(status);
+        ArrayList<AttendanceDTO>attendanceDTOArrayList=new ArrayList<>();
+        entities.forEach(attendanceEntity -> {
+            attendanceDTOArrayList.add(mapper.map(attendanceEntity, AttendanceDTO.class));
+        });
+        return attendanceDTOArrayList;
     }
 
     @Override
