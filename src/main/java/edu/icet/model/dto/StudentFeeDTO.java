@@ -9,7 +9,7 @@ import java.time.LocalDate;
 @Setter
 @Getter
 
-public class StudentFeesDTO {
+public class StudentFeeDTO {
     private Integer studentFeeId;
     private Integer studentId;
     private Integer feeStructureId;
