@@ -1,14 +1,22 @@
 package edu.icet.service.impl;
 
 import edu.icet.model.dto.StudentFeeDTO;
+import edu.icet.repository.StudentFeeRepository;
 import edu.icet.service.StudentFeeService;
 import edu.icet.utill.FeeStatus;
+import lombok.RequiredArgsConstructor;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class StudentFeeServiceImpl implements StudentFeeService {
+
+    final private StudentFeeRepository repository;
+    final private ModelMapper mapper;
+
     @Override
     public void addStudentFee(StudentFeeDTO studentFee) {
 
