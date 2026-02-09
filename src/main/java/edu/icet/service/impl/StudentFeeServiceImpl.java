@@ -26,7 +26,7 @@ public class StudentFeeServiceImpl implements StudentFeeService {
 
     @Override
     public void updateStudentFee(StudentFeeDTO studentFee) {
-
+        repository.save(mapper.map(studentFee, StudentFeeEntity.class));
     }
 
     @Override

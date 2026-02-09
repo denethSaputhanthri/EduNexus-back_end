@@ -20,6 +20,12 @@ public class StudentFeeController {
     public void addStudentFee(@RequestBody StudentFeeDTO studentFee){
         service.addStudentFee(studentFee);
     }
+
+    @PutMapping("/update/details")
+    public void updateStudentFee(@RequestBody StudentFeeDTO studentFee){
+        service.updateStudentFee(studentFee);
+    }
+
     @GetMapping("/get/details")
     public List<StudentFeeDTO>getAll(){
         return service.getAll();
