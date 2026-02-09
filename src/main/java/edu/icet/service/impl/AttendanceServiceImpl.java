@@ -1,6 +1,7 @@
 package edu.icet.service.impl;
 
 import edu.icet.model.dto.AttendanceDTO;
+import edu.icet.model.entity.AttendanceEntity;
 import edu.icet.repository.AttendanceRepository;
 import edu.icet.service.AttendanceService;
 import edu.icet.utill.AStatus;
@@ -20,7 +21,7 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     @Override
     public void addAttendance(AttendanceDTO attendance) {
-
+        repository.save(mapper.map(attendance, AttendanceEntity.class));
     }
 
     @Override
