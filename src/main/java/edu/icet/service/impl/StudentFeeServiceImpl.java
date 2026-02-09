@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -35,7 +36,12 @@ public class StudentFeeServiceImpl implements StudentFeeService {
 
     @Override
     public List<StudentFeeDTO> getAll() {
-        return List.of();
+        List<StudentFeeEntity>entities=repository.findAll();
+        ArrayList<StudentFeeDTO>studentFeeDTOArrayList=new ArrayList<>();
+        entities.forEach(studentFeeEntity -> {
+            studentFeeDTOArrayList.add(mapper.map(studentFeeEntity,StudentFeeDTO.class));
+        });
+        return studentFeeDTOArrayList;
     }
 
     @Override
