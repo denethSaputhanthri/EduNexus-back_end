@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface StudentFeeRepository extends JpaRepository<StudentFeeEntity,Integer> {
     List<StudentFeeEntity> findByStudentId(Integer studentId);
+    List<StudentFeeEntity> findByFeeStructureId(Integer feeStructureId);
 }

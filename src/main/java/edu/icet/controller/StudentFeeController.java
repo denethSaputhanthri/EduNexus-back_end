@@ -46,4 +46,9 @@ public class StudentFeeController {
         return service.searchByStudentId(studentId) ;
     }
 
+    @GetMapping("/searchByFeeStructure/{feeStructureId}")
+    public List<StudentFeeDTO> searchByFeeStructureId(@PathVariable Integer feeStructureId){
+        return service.searchByFeeStructure(feeStructureId);
+    }
+
 }
