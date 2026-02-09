@@ -21,6 +21,11 @@ public class AttendanceController {
         service.addAttendance(attendance);
     }
 
+    @PutMapping("/update/details")
+    public void updateAttendance(@RequestBody AttendanceDTO attendance){
+        service.updateAttendance(attendance);
+    }
+
     @GetMapping("/get/details")
     public List<AttendanceDTO>getAll(){
         return service.getAll();

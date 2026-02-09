@@ -27,7 +27,7 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     @Override
     public void updateAttendance(AttendanceDTO attendance) {
-
+        repository.save(mapper.map(attendance, AttendanceEntity.class));
     }
 
     @Override
