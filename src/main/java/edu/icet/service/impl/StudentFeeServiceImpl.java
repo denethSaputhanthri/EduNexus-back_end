@@ -46,7 +46,7 @@ public class StudentFeeServiceImpl implements StudentFeeService {
 
     @Override
     public StudentFeeDTO searchById(Integer studentFeeId) {
-        return null;
+        return mapper.map(repository.findById(studentFeeId).get(),StudentFeeDTO.class);
     }
 
     @Override
