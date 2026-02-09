@@ -26,6 +26,11 @@ public class AttendanceController {
         service.updateAttendance(attendance);
     }
 
+    @DeleteMapping("/delete/details/{attendanceId}")
+    public void deleteAttendance(@PathVariable Integer attendanceId){
+        service.deleteAttendance(attendanceId);
+    }
+
     @GetMapping("/get/details")
     public List<AttendanceDTO>getAll(){
         return service.getAll();

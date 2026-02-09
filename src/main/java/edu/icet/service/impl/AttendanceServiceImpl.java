@@ -32,7 +32,7 @@ public class AttendanceServiceImpl implements AttendanceService {
 
     @Override
     public void deleteAttendance(Integer attendanceId) {
-
+        repository.deleteById(attendanceId);
     }
 
     @Override
