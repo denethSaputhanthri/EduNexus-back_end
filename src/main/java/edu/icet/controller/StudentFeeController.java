@@ -26,6 +26,11 @@ public class StudentFeeController {
         service.updateStudentFee(studentFee);
     }
 
+    @DeleteMapping("/delete/details/{studentFeeId}")
+    public void deleteStudentFee(@PathVariable Integer studentFeeId){
+        service.deleteStudentFee(studentFeeId);
+    }
+
     @GetMapping("/get/details")
     public List<StudentFeeDTO>getAll(){
         return service.getAll();

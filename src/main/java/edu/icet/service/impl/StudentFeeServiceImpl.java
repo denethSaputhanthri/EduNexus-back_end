@@ -31,7 +31,7 @@ public class StudentFeeServiceImpl implements StudentFeeService {
 
     @Override
     public void deleteStudentFee(Integer studentFeeId) {
-
+        repository.deleteById(studentFeeId);
     }
 
     @Override
