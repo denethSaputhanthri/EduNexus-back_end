@@ -4,7 +4,7 @@ import edu.icet.model.dto.FeeStructureDTO;
 
 import java.util.List;
 
-public interface feeStructureService {
+public interface FeeStructureService {
     void addFeeStructure(FeeStructureDTO feeStructure);
     void updateFeeStructure(FeeStructureDTO feeStructure);
     void deleteFeeStructure(FeeStructureDTO feeStructure);
