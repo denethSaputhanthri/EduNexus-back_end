@@ -30,8 +30,8 @@ public class FeeStructureServiceImpl implements FeeStructureService {
     }
 
     @Override
-    public void deleteFeeStructure(FeeStructureDTO feeStructure) {
-
+    public void deleteFeeStructure(Integer feeStructureId) {
+        repository.deleteById(feeStructureId);
     }
 
     @Override

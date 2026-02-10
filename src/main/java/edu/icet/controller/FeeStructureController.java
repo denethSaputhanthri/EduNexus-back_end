@@ -26,6 +26,11 @@ public class FeeStructureController {
         service.updateFeeStructure(feeStructure);
     }
 
+    @DeleteMapping("/delete/details/{feeStructureId}")
+    public void deleteFeesStructure(@PathVariable Integer feeStructureId){
+        service.deleteFeeStructure(feeStructureId);
+    }
+
     @GetMapping("/get/details")
     public List<FeeStructureDTO>getAll(){
         return service.getAll();
