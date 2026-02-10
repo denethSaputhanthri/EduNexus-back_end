@@ -21,6 +21,11 @@ public class FeeStructureController {
         service.addFeeStructure(feeStructure);
     }
 
+    @PutMapping("/update/details")
+    public void updateFeesStructure(@RequestBody FeeStructureDTO feeStructure){
+        service.updateFeeStructure(feeStructure);
+    }
+
     @GetMapping("/get/details")
     public List<FeeStructureDTO>getAll(){
         return service.getAll();

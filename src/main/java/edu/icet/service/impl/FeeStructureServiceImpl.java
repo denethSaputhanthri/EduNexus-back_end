@@ -26,7 +26,7 @@ public class FeeStructureServiceImpl implements FeeStructureService {
 
     @Override
     public void updateFeeStructure(FeeStructureDTO feeStructure) {
-
+        repository.save(mapper.map(feeStructure, FeeStructureEntity.class));
     }
 
     @Override
