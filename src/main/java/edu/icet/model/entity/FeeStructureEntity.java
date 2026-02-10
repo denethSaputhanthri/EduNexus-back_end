@@ -1,7 +1,6 @@
 package edu.icet.model.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,6 +13,8 @@ import lombok.ToString;
 @Entity
 @Table(name = "fee_structure")
 public class FeeStructureEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer feeStructureId;
     private Integer classId;
     private Integer feeCategoryId;

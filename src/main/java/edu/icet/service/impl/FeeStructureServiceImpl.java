@@ -1,6 +1,7 @@
 package edu.icet.service.impl;
 
 import edu.icet.model.dto.FeeStructureDTO;
+import edu.icet.model.entity.FeeStructureEntity;
 import edu.icet.repository.FeeStructureRepository;
 import edu.icet.service.FeeStructureService;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +20,7 @@ public class FeeStructureServiceImpl implements FeeStructureService {
 
     @Override
     public void addFeeStructure(FeeStructureDTO feeStructure) {
-
+        repository.save(mapper.map(feeStructure, FeeStructureEntity.class));
     }
 
     @Override
