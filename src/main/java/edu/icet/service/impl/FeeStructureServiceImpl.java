@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -35,6 +36,11 @@ public class FeeStructureServiceImpl implements FeeStructureService {
 
     @Override
     public List<FeeStructureDTO> getAll() {
-        return List.of();
+        List<FeeStructureEntity>entities=repository.findAll();
+        ArrayList<FeeStructureDTO>feeStructureDTOArrayList=new ArrayList<>();
+        entities.forEach(feeStructureEntity -> {
+            feeStructureDTOArrayList.add(mapper.map(feeStructureEntity,FeeStructureDTO.class));
+        });
+        return feeStructureDTOArrayList;
     }
 }
