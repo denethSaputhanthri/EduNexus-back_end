@@ -1,6 +1,7 @@
 package edu.icet.service.impl;
 
 import edu.icet.model.dto.NonAcademicStaffDTO;
+import edu.icet.model.entity.NonAcademicStaffEntity;
 import edu.icet.repository.NonAcademicStaffRepository;
 import edu.icet.service.NonAcademicStaffService;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +19,7 @@ public class NonAcademicStaffServiceImpl implements NonAcademicStaffService {
 
     @Override
     public void addNonAcademicStaff(NonAcademicStaffDTO staff) {
-
+        repository.save(mapper.map(staff, NonAcademicStaffEntity.class));
     }
 
     @Override
