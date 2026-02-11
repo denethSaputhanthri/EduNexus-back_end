@@ -25,7 +25,7 @@ public class NonAcademicStaffServiceImpl implements NonAcademicStaffService {
 
     @Override
     public void updateNonAcademicStaff(NonAcademicStaffDTO staff) {
-
+        repository.save(mapper.map(staff, NonAcademicStaffEntity.class));
     }
 
     @Override

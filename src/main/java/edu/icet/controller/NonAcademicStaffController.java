@@ -20,6 +20,12 @@ public class NonAcademicStaffController {
     public void addNonAcademicStaff(@RequestBody NonAcademicStaffDTO staff){
         service.addNonAcademicStaff(staff);
     }
+
+    @PutMapping("/update/details")
+    public void updateNonAcademicStaff(@RequestBody NonAcademicStaffDTO staff){
+        service.updateNonAcademicStaff(staff);
+    }
+
     @GetMapping("/get/details")
     public List<NonAcademicStaffDTO> getNonAcademicStaff(){
         return service.getAll();
