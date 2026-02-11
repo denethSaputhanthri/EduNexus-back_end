@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -34,6 +35,11 @@ public class NonAcademicStaffServiceImpl implements NonAcademicStaffService {
 
     @Override
     public List<NonAcademicStaffDTO> getAll() {
-        return List.of();
+        List<NonAcademicStaffEntity> entities = repository.findAll();
+        ArrayList<NonAcademicStaffDTO>nonAcademicStaffDTOArrayList=new ArrayList<>();
+        entities.forEach(nonAcademicStaffEntity -> {
+             nonAcademicStaffDTOArrayList.add(mapper.map(nonAcademicStaffEntity,NonAcademicStaffDTO.class));
+        });
+        return nonAcademicStaffDTOArrayList;
     }
 }
