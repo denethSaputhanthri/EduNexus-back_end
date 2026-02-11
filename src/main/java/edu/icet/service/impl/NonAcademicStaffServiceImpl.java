@@ -30,7 +30,7 @@ public class NonAcademicStaffServiceImpl implements NonAcademicStaffService {
 
     @Override
     public void deleteNonAcademicStaff(Integer NonAcademicStaffId) {
-
+        repository.deleteById(NonAcademicStaffId);
     }
 
     @Override

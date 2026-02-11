@@ -26,6 +26,11 @@ public class NonAcademicStaffController {
         service.updateNonAcademicStaff(staff);
     }
 
+    @DeleteMapping("/delete/details")
+    public void deleteNonAcademicStaff(Integer NonAcademicId){
+        service.deleteNonAcademicStaff(NonAcademicId);
+    }
+
     @GetMapping("/get/details")
     public List<NonAcademicStaffDTO> getNonAcademicStaff(){
         return service.getAll();
