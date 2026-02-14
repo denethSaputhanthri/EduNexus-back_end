@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 @Service
 @RequiredArgsConstructor
@@ -33,6 +34,11 @@ public class ParentServiceImpl implements ParentService {
 
     @Override
     public List<ParentDTO> getAll() {
-        return List.of();
+        List<ParentEntity> entities = repository.findAll();
+        ArrayList<ParentDTO>parentDTOArrayList=new ArrayList<>();
+        entities.forEach(parentEntity -> {
+            parentDTOArrayList.add(mapper.map(parentEntity,ParentDTO.class));
+        });
+        return parentDTOArrayList;
     }
 }
