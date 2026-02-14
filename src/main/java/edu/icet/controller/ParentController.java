@@ -26,6 +26,11 @@ public class ParentController {
         service.updateParent(parent);
     }
 
+    @DeleteMapping("/delete/details/{parentId}")
+    public void deleteParent(@PathVariable Integer parentId){
+        service.deleteParent(parentId);
+    }
+
     @GetMapping("/getAll/details")
     public List<ParentDTO> getAll(){
         return service.getAll();
