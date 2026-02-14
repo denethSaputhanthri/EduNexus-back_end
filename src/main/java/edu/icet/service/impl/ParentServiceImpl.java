@@ -29,7 +29,7 @@ public class ParentServiceImpl implements ParentService {
 
     @Override
     public void deleteParent(Integer parentId) {
-        repository.deleteById(parentId);
+        repository.deleteById(parentId) ;
     }
 
     @Override
