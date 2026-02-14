@@ -21,6 +21,11 @@ public class ParentController {
         service.addParent(parent);
     }
 
+    @PutMapping("/update/details")
+    public void updateParent(@RequestBody ParentDTO parent){
+        service.updateParent(parent);
+    }
+
     @GetMapping("/getAll/details")
     public List<ParentDTO> getAll(){
         return service.getAll();

@@ -24,7 +24,7 @@ public class ParentServiceImpl implements ParentService {
 
     @Override
     public void updateParent(ParentDTO parent) {
-
+        repository.save(mapper.map(parent, ParentEntity.class));
     }
 
     @Override
