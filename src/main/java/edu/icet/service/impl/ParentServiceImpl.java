@@ -1,6 +1,7 @@
 package edu.icet.service.impl;
 
 import edu.icet.model.dto.ParentDTO;
+import edu.icet.model.entity.ParentEntity;
 import edu.icet.repository.ParentRepository;
 import edu.icet.service.ParentService;
 import lombok.RequiredArgsConstructor;
@@ -17,7 +18,7 @@ public class ParentServiceImpl implements ParentService {
 
     @Override
     public void addParent(ParentDTO parent) {
-
+        repository.save(mapper.map(parent, ParentEntity.class));
     }
 
     @Override
